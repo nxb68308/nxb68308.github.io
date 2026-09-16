@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 4</title>
+    <title>About Me</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       #primary-nav {
         background-color: red;
@@ -61,37 +64,40 @@
   }
 
     </style>
+ 
 </head>
 <body>
-    <nav id="primary-nav">
+    <body>
+<nav id="primary-nav">
     <div class="inner">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
-    <main>
-      <p>The start of my website</p>
-    </main>
-    <script>
-      // Perform this after the window has loaded
-      window.onload = () => {
-        // First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)
-        const toggleNavBtn = document.getElementById("toggle-nav-btn");
-        toggleNavBtn.innerHTML = "&#9776;";
-
-        // Tell button to do something on click
-        toggleNavBtn.addEventListener("click", () => {
-          // toggle the body's class attribute
-          document.body.classList.toggle("nav-open");
-          toggleNavBtn.innerHTML = document.body.classList.contains("nav-open")
-            ? "&#x2715"
-            : "&#9776;";
-        });
-      };
-    </script>
+   <section>
+    <h1>About Me</h1>
+    <p>Here is a photo I made for a photography class using 2 different photos and then incorporating Photoshop! It was a Clown series!</p>
+<script>
+window.onload = () => {
+    const toggleNavBtn = document.getElementById('toggle-nav-btn');
+    toggleNavBtn.innerHTML = '&#9776;';
+    // Tell button to do something on click
+      toggleNavBtn.addEventListener('click', () => {
+        // toggle the body's class attribute
+        document.body.classList.toggle('nav-open');
+        toggleNavBtn.innerHTML = document.body.classList.contains('nav-open')
+          ? '&#x2715'
+          : '&#9776;';
+      });
+};
+</script>
+<button id="toggle-nav-btn">☰</button>
+<img src="Clowns.jpg" alt="Clown Photoshop">
+   </section>
+    
 </body>
 </html>
