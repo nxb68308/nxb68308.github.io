@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4</title>
+    <style>
+      #primary-nav {
+        background-color: red;
+      }
+      #primary-nav ul {
+        padding-left: 0;
+      }
+      #primary-nav li {
+        list-style: none;
+        display: inline-block;
+      }
+      #primary-nav a {
+        background-color: pink;
+        display: block;
+        padding: 1em;
+      }
+      @media (max-width: 767px) {
+    #primary-nav {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s ease-out;
+    }
+    #primary-nav li {
+      display: block;
+    }
+    body.nav-open #primary-nav {
+      grid-template-rows: 1fr;
+    }
+    .inner {
+      overflow: hidden;
+    }
+    #toggle-nav-btn {
+      display: block; /* display button beneath breakpoint */
+    }
+  }
+  @media (max-width: 767px) {
+    #primary-nav {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s ease-out;
+    }
+    .inner {overflow: hidden;}
+    #primary-nav li {
+      display: block;
+    }
+    body.nav-open #primary-nav {
+      grid-template-rows: 1fr;
+    }
+    .inner {
+      overflow: hidden;
+    }
+    #toggle-nav-btn {
+      display: block; /* display button beneath breakpoint */
+    }
+  }
+
+    </style>
+</head>
+<body>
+    <div>
+  <nav id="primary-nav">
+ <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+ </ul>
+</nav>
+    </div>
+  </nav>
+    <main>
+      <h1> Exercise 4</h1>
+      <p>The start of my website</p>
+    </main>
+    <script>
+window.onload = () => {
+    const toggleNavBtn = document.getElementById('toggle-nav-btn');
+    toggleNavBtn.innerHTML = '&#9776;';
+    // Tell button to do something on click
+      toggleNavBtn.addEventListener('click', () => {
+        // toggle the body's class attribute
+        document.body.classList.toggle('nav-open');
+        toggleNavBtn.innerHTML = document.body.classList.contains('nav-open')
+          ? '&#x2715'
+          : '&#9776;';
+      });
+};
+</script>
+</body>
+</html>
