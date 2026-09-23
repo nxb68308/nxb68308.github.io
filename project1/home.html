@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart of Pennsylvania</title>
+  <style>
+    :root {
+      --bg: #8A756E;
+      --panel: #5f2d2f;
+      --card: #73000a;
+      --text: #ffffff;
+      --muted: #f4e9e7;
+      --line: rgba(255,255,255,0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      background: var(--card);
+      padding: 18px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      background: rgba(0,0,0,0.18);
+      padding: 50px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero-copy {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .hero-copy p {
+      margin-bottom: 20px;
+      color: var(--muted);
+    }
+
+    .btn {
+      background: var(--card);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background: #560007;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .feature-section {
+      padding: 50px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feature-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .feature-image,
+    .feature-copy {
+      flex: 1;
+    }
+
+    .feature-copy h2 {
+      margin-bottom: 14px;
+      font-size: clamp(1.8rem, 2vw, 2.5rem);
+    }
+
+    .feature-copy p {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .feature-image img {
+      width: 100%;
+      max-width: 500px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .featured {
+      padding: 60px 0;
+    }
+
+    .featured h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+    }
+
+    .card-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin-bottom: 18px;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      background: var(--card);
+      padding: 40px 0 20px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .footer-grid h4 {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      display: block;
+      margin: 6px 0;
+      color: #f6ecea;
+    }
+
+    .copyright {
+      max-width: 1100px;
+      margin: 25px auto 0;
+      padding: 0 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #f5dbd9;
+    }
+      body {
+        background-color: #8A756E;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      /* Removes default padding that offsets a list */
+      #primary-nav ul {
+        padding-left: 0;
+      }
+      /* Removes default padding */
+      #primary-nav li {
+        list-style: none;
+        display: inline-block;
+        border-left: 2.5px solid white;
+        padding: 0 10px;
+      }
+      /* Overrides above rule for first list item */
+      #primary-nav li:first-child {
+        border-left: none;
+      }
+      #primary-nav {
+        background-color: #5D0E14;
+      }
+      #primary-nav ul {
+        padding-left: 1275px;
+      }
+      #primary-nav li {
+        list-style: none;
+        display: inline-block;
+      }
+      #primary-nav a {
+        background-color: #5D0E14;
+        display: block;
+        padding: 1em;
+      }
+      @media (max-width: 767px) {
+        #primary-nav li {
+          display: block;
+        }
+      }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <div class="logo">❤ Heart of Pennsylvania</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Plan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1>Discover a new adventure today!</h1>
+          <hr style="width: 80%; border: 2px solid #5D0E14; margin: 1em 0;">
+          <p>Check out our featured locations, tickets, and event calendars.</p>
+          <button class="btn">Plan Adventure</button>
+        </div>
+        <div class="hero-image">
+          <img src="RickettsGlen2021-161-1024.webp" alt="Waterfall" />
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-section">
+      <div class="feature-inner">
+        <div class="feature-image">
+          <img src="hp.jpg" alt="Hersheypark" />
+        </div>
+        <div class="feature-copy">
+          <h2>Need a family-oriented option?</h2>
+          <hr style="width: 90%; border: 2px solid #5D0E14; margin: 1em 0;">
+          <p>Check out our highlighted attractions, amusement parks and more.</p>
+          <button class="btn">Explore</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured">
+      <h2>Featured</h2>
+
+      <div class="card-grid">
+        <article class="card">
+          <img src="zooamerica.jpg" alt="ZooAmerica" />
+          <h3>ZooAmerica</h3>
+          <button class="btn">View</button>
+        </article>
+
+        <article class="card">
+          <img src="Indian-Echo-Cavern-PC200117.png" alt="Indian Echo Caverns" />
+          <h3>Indian Echo Caverns</h3>
+          <button class="btn">View</button>
+        </article>
+
+        <article class="card">
+          <img src="gettysburgmilitarypark.jpg" alt="Gettysburg Military Park" />
+          <h3>Gettysburg Military Park</h3>
+          <button class="btn">View</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Follow Us</h4>
+        <p>Facebook</p>
+        <p>LinkedIn</p>
+        <p>Instagram</p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#">Events</a>
+        <a href="#">Gallery</a>
+      </div>
+
+      <div>
+        <h4>Partners</h4>
+        <a href="#">Hotels</a>
+        <a href="#">Restaurants</a>
+      </div>
+
+      <div>
+        <h4>History</h4>
+        <a href="#">Learn More</a>
+      </div>
+    </div>
+
+    <p class="copyright">© 2026 Heart of Pennsylvania</p>
+  </footer>
+</body>
+</html>
