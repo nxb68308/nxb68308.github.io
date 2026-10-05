@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barnhart Studios | Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+      #primary-nav {
+        background-color: rgb(200, 195, 195);
+      }
+      #primary-nav ul {
+        padding-left: 0;
+      }
+      #primary-nav li {
+        list-style: none;
+        display: inline-block;
+      }
+      #primary-nav a {
+        background-color: rgb(126, 121, 122);
+        display: block;
+        padding: 1em;
+      }
+      @media (max-width: 767px) {
+    #primary-nav {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s ease-out;
+    }
+    #primary-nav li {
+      display: block;
+    }
+    body.nav-open #primary-nav {
+      grid-template-rows: 1fr;
+    }
+    .inner {
+      overflow: hidden;
+    }
+    #toggle-nav-btn {
+      display: block; /* display button beneath breakpoint */
+    }
+  }
+  @media (max-width: 767px) {
+    #primary-nav {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.5s ease-out;
+    }
+    .inner {overflow: hidden;}
+    #primary-nav li {
+      display: block;
+    }
+    body.nav-open #primary-nav {
+      grid-template-rows: 1fr;
+    }
+    .inner {
+      overflow: hidden;
+    }
+    #toggle-nav-btn {
+      display: block; /* display button beneath breakpoint */
+    }
+    #toggle-nav-btn {
+    display: none;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+  }
+  @media (max-width: 767px) {
+    /* Additional styles here... */
+    #toggle-nav-btn {
+        display: block;
+    }
+}
+  }
+      @media (max-width: 767px) {
+        #primary-nav { display: none; }
+        body.nav-open #primary-nav { display: block; }
+      }
+    </style>
+    <script>
+    // Perform this after the window has loaded
+    window.onload = () => {
+      // First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)
+      const toggleNavBtn = document.getElementById('toggle-nav-btn');
+      toggleNavBtn.innerHTML = '&#9776;';
+
+      // Tell button to do something on click
+      toggleNavBtn.addEventListener('click', () => {
+        // toggle the body's class attribute
+        document.body.classList.toggle('nav-open');
+        const isOpen = document.body.classList.contains('nav-open');
+        toggleNavBtn.innerHTML = isOpen ? '&#x2715;' : '&#9776;';
+        toggleNavBtn.setAttribute('aria-expanded', isOpen);
+        toggleNavBtn.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      });
+    };
+  </script>
+<body>
+  <header class="site-header">
+    <div class="container topbar">
+      <div class="logo" aria-label="Barnhart Studios home page">
+        <div class="logo-mark">
+          <img src="Nevaeh Barnhart_Logo-Trans.webp" alt="Barnhart Studios logo" style="width: 180px; height: auto;">
+        </div>
+        <div class="logo-text">Barnhart Studios</div>
+      </div>
+
+      <button id="toggle-nav-btn" type="button" aria-label="Open navigation" aria-controls="primary-nav" aria-expanded="false"></button>
+      <nav id="primary-nav" class="site-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Services</p>
+        <h2>Portraits, pet photography, and special events</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>Portrait Photography</h3>
+          <p>Beautiful portraits that capture the essence of your personality and style.</p>
+          <img src="portrait2.avif" alt="Portrait photography example">
+          <a href="contact.html">Learn more</a>
+        </article>
+
+        <article class="card">
+          <h3>Pet Photography</h3>
+          <p>Specialized pet photography that highlights the unique traits and personalities of your furry friends.</p>
+          <img src="Dog _9-2.avif" alt="Pet photography example">
+          <a href="contact.html">Learn more</a>
+        </article>
+
+        <article class="card">
+          <h3>Special Events</h3>
+          <p>Memorable moments captured in a beautiful, timeless way.</p>
+          <img src="Special Events_Nevaeh Barnhart.avif" alt="Special events photography example">
+          <a href="contact.html">Learn more</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="info-panel">
+        <p class="eyebrow">What to expect</p>
+        <h3>Beautiful images, memorable moments</h3>
+        <ul class="list">
+          <li>Schedule a session with us!</li>
+          <li>Creative shoots are planned and executed with care</li>
+          <li>Props and as many outfit changes as you'd like</li>
+          <li>However many print packages or digital files for you to choose from</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Barnhart Studios</p>
+    </div>
+  </footer>
+</body>
+</html>
