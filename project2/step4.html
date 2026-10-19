@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Makeup by CosmoStars</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inspiration&family=Josefin+Slab:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #b05858;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.tutorial-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #b05858;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  min-height: 38px;
+  padding: 5px 8px;
+  background: #d67070;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 22px;
+  height: 22px;
+}
+
+.brand span {
+  font-family: "Inspiration", cursive;
+  font-size: 16px;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu summary {
+  width: 24px;
+  overflow: hidden;
+  color: transparent;
+  cursor: pointer;
+  font-size: 0;
+}
+
+.menu summary::marker {
+  content: "";
+}
+
+.menu summary::after {
+  content: "☰";
+  color: white;
+  font-size: 18px;
+}
+
+.site-menu {
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  right: 0;
+  width: 180px;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: #994f4f;
+}
+
+.site-menu a:hover,
+.site-menu a:focus-visible {
+  background-color: #7d4040;
+}
+
+.site-menu a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.breadcrumb {
+  min-height: 22px;
+  padding: 5px 10px;
+  background: #994f4f;
+  font-size: 7px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.step-content {
+  flex: 1;
+  padding: 14px 9% 16px;
+}
+
+.step-content h1 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.step-content p {
+  margin: 0;
+  font-family: "Josefin Slab", serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.step-image {
+  display: block;
+  width: 300px;
+  height: 225px;
+  flex: 0 0 auto;
+  margin: 12px auto;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.step-copy {
+  padding: 0 5px;
+}
+
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  min-width: 76px;
+  padding: 7px 12px;
+  background: #7d4040;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Josefin Slab", serif;
+  font-size: 11px;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: #683535;
+}
+
+.site-footer {
+  min-height: 34px;
+  padding: 7px 10px;
+  background: #994f4f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.site-footer a {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  text-decoration: none;
+  font-size: 6px;
+}
+
+.site-footer img {
+  width: 10px;
+  height: 10px;
+  object-fit: contain;
+}
+
+@media (min-width: 520px) {
+  .site-header {
+    min-height: 64px;
+    padding: 10px 16px;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand span {
+    font-size: 25px;
+  }
+
+  .breadcrumb {
+    min-height: 30px;
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+
+  .step-content {
+    padding-top: 26px;
+  }
+
+  .step-content h1 {
+    font-size: 28px;
+  }
+
+  .step-content p {
+    font-size: 18px;
+  }
+
+  .step-image {
+    height: 360px;
+    margin: 20px auto;
+  }
+
+  .button {
+    min-width: 110px;
+    padding: 10px 16px;
+    font-size: 15px;
+  }
+
+  .site-footer {
+    min-height: 54px;
+    padding: 12px 16px;
+  }
+
+  .site-footer a {
+    gap: 5px;
+    font-size: 9px;
+  }
+
+  .site-footer img {
+    width: 14px;
+    height: 14px;
+  }
+}
+</style>
+  </head>
+  <body>
+    <div class="tutorial-page">
+      <header class="site-header">
+        <a class="brand" href="index.html">
+          <img src="star.png" alt="" />
+          <span>Makeup by CosmoStars</span>
+        </a>
+        <details class="menu">
+          <summary>Open menu</summary>
+          <ul class="site-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="creativelooks.html">Creative Looks</a></li>
+            <li><a href="everydaylooks.html">Everyday Looks</a></li>
+            <li><a href="throwbacklooks.html">Throwback Looks</a></li>
+          </ul>
+        </details>
+      </header>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Beauty</a> &gt; <a href="makeuplooks.html">Makeup Looks</a> &gt; Creative Looks
+      </nav>
+      <main class="step-content">
+        <h1>Step 4</h1>
+        <p>Add some color to the shapes around the eyes. </p>
+        <img class="step-image" src="step 4.jpg" alt="Eye detail" />
+        <p class="step-copy">Don’t forget the nose and lips! choose whatever color you like or choose our default red. </p>
+        <div class="step-actions">
+  <a class="button" href="step3.html">&larr; Back</a>
+  <a class="button" href="step5.html">Next &rarr;</a>
+</div>
+      </main>
+      <footer class="site-footer" id="footer">
+        <a href="https://www.instagram.com/">
+          <img src="instaicon.png" alt="" />
+          <span>@cosmostars_makeup</span>
+        </a>
+        <a href="https://www.facebook.com/">
+          <img src="sm_5af2d4c8c7437.png" alt="" />
+          <span>@cosmostars_makeup</span>
+        </a>
+        <a href="#">
+          <img src="shopping-cart-white-icon.webp" alt="" />
+          <span>shopcosmostarsmakeup.com</span>
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
