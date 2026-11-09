@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Events | Brews &amp; Bonds</title>
+	<style>
+		body {
+			margin: 0;
+			background-color: #f4f4f2;
+			color: white;
+			font-family: Georgia, serif;
+		}
+
+		.container {
+			width: 100%;
+			max-width: none;
+			margin: 0;
+		}
+
+		header, footer {
+			background-color: #87a46b;
+			color: white;
+			padding: 8px 25px;
+		}
+
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		header h1 {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin: 0;
+			font-size: 30px;
+		}
+
+		.cup-icon {
+			width: 40px;
+			height: 40px;
+		}
+
+		nav a {
+			margin-left: 12px;
+			color: white;
+			text-decoration: none;
+		}
+
+		.nav-toggle, .nav-toggle-label {
+			display: none;
+		}
+
+		nav a:hover, footer a:hover {
+			text-decoration: underline;
+		}
+
+		.event-banner {
+			display: flex;
+		}
+
+		.event-banner img {
+			display: block;
+			width: 100%;
+			aspect-ratio: 0.94;
+			object-fit: cover;
+			object-position: center bottom;
+		}
+
+		.schedule {
+			padding: 22px 18px 12px;
+			background-color: #7c9995;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		.day-column {
+			width: 27%;
+			border-right: 4px solid white;
+			text-align: center;
+		}
+
+		th, td {
+			padding: 10px 12px;
+			border-bottom: 4px solid white;
+		}
+
+		th {
+			font-size: 24px;
+			font-weight: normal;
+		}
+
+		td {
+			font-size: 15px;
+			line-height: 1.4;
+		}
+
+		.event-details {
+			text-align: left;
+		}
+
+		.note {
+			margin: 12px 0 0;
+			text-align: center;
+			font-size: 14px;
+			line-height: 1.4;
+		}
+
+		footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 70px;
+		}
+
+		footer a {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			margin-right: 20px;
+			color: white;
+			font-size: 19px;
+		}
+
+		.social-icon {
+			width: 34px;
+			height: 34px;
+		}
+
+		.footer-cup {
+			width: 78px;
+			height: 78px;
+			color: #b7cba0;
+		}
+
+		@media (max-width: 650px) {
+			.container {
+				width: 100%;
+				margin-top: 0;
+			}
+
+			header {
+				flex-wrap: wrap;
+				gap: 10px;
+			}
+
+			nav a {
+				margin: 0 10px 0 0;
+			}
+
+			.nav-toggle {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+				clip-path: inset(50%);
+				white-space: nowrap;
+			}
+
+			.nav-toggle-label {
+				display: block;
+				width: 100%;
+				padding: 10px 0;
+				border-top: 1px solid rgba(255, 255, 255, 0.45);
+				cursor: pointer;
+			}
+
+			.nav-toggle-label::after {
+				content: "";
+				float: right;
+				width: 20px;
+				height: 14px;
+				margin-top: 3px;
+				background: linear-gradient(to bottom, white 0 2px, transparent 2px 6px, white 6px 8px, transparent 8px 12px, white 12px 14px);
+			}
+
+			.nav-toggle:focus-visible + .nav-toggle-label {
+				outline: 2px solid white;
+				outline-offset: 3px;
+			}
+
+			.nav-toggle:not(:checked) ~ nav {
+				display: none;
+			}
+
+			header nav {
+				width: 100%;
+			}
+
+			header nav a {
+				display: block;
+				padding: 8px 0;
+			}
+
+			.schedule {
+				padding: 14px 8px 10px;
+			}
+
+			.day-column {
+				width: 25%;
+			}
+
+			th, td {
+				padding: 8px 6px;
+			}
+
+			th {
+				font-size: 18px;
+			}
+
+			td {
+				font-size: 13px;
+			}
+
+			.note {
+				font-size: 12px;
+			}
+
+			footer {
+				flex-wrap: wrap;
+				gap: 12px;
+			}
+		}
+
+		@media (max-width: 420px) {
+			.event-details {
+				font-size: 12px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>
+				<svg class="cup-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+					<path d="M8 11h28v13a12 12 0 0 1-12 12h-4A12 12 0 0 1 8 24V11Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+					<path d="M36 15h3a5 5 0 0 1 0 10h-4M7 42h34" stroke="currentColor" stroke-width="4" stroke-linecap="square"/>
+				</svg>
+				Brews &amp; Bonds
+			</h1>
+			<input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle main navigation">
+			<label class="nav-toggle-label" for="nav-toggle"></label>
+			<nav aria-label="Main navigation">
+				<a href="index.html">Home</a>
+				<a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+				<a href="events.html">Events</a>
+				<a href="jobs.html">Jobs</a>
+			</nav>
+		</header>
+
+		<main>
+			<div class="event-banner">
+				<img src="gallery.png"Art exhibit">
+			</div>
+
+			<section class="schedule">
+				<table>
+					<tbody>
+						<tr>
+							<th class="day-column" scope="row">Monday</th>
+							<td class="event-details">→ Morning Yoga Class (8:00 AM - 9:00 AM)<br>→ Live Acoustic Music (7:00 PM - 9:00 PM)</td>
+						</tr>
+						<tr>
+							<th class="day-column" scope="row">Tuesday</th>
+							<td class="event-details">→ Coffee Tasting Workshop (6:00 PM - 7:30 PM)<br>→ Open Mic Night (8:00 PM - 10:00 PM)</td>
+						</tr>
+						<tr>
+							<th class="day-column" scope="row">Wednesday</th>
+							<td class="event-details">→ Art Exhibition (All day)<br>→ Trivia Night (7:00 PM - 9:00 PM)</td>
+						</tr>
+						<tr>
+							<th class="day-column" scope="row">Thursday</th>
+							<td class="event-details">→ Cooking Class (5:00 PM - 7:00 PM)<br>→ Board Game Night (6:00 PM - 9:00 PM)</td>
+						</tr>
+						<tr>
+							<th class="day-column" scope="row">Friday</th>
+							<td class="event-details">→ Live Jazz Band (7:30 PM - 9:30 PM)</td>
+						</tr>
+						<tr>
+							<th class="day-column" scope="row">Saturday</th>
+							<td class="event-details">→ Family Day (10:00 AM - 12:00 PM)<br>→ Poetry Slam (7:00 PM - 9:00 PM)</td>
+						</tr>
+						<tr>
+							<th class="day-column" scope="row">Sunday</th>
+							<td class="event-details">→ Book Club Meeting (3:00 PM - 4:30 PM)<br>→ Sunday Brunch (10:00 AM - 2:00 PM)</td>
+						</tr>
+					</tbody>
+				</table>
+			<p class="note">Please note that specific event dates and times may vary, and it's always a good idea to check with the coffee shop for the most up-to-date information and any additional events they may offer.</p>
+			</section>
+		</main>
+
+		<footer>
+			<div>
+				<a href="https://www.instagram.com/" aria-label="Instagram: @brews and bonds coffee">
+					<svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+						<rect x="3" y="3" width="18" height="18" rx="5"/>
+						<circle cx="12" cy="12" r="4"/>
+						<circle cx="17.5" cy="6.5" r="0.75" fill="currentColor"/>
+					</svg>
+					@brews&amp;bonds_coffee
+				</a>
+				<a href="https://www.facebook.com/" aria-label="Facebook: @brews and bonds coffee">
+					<svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/>
+					</svg>
+					@brews&amp;bonds_coffee
+				</a>
+			</div>
+			<svg class="cup-icon footer-cup" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+				<path d="M8 11h28v13a12 12 0 0 1-12 12h-4A12 12 0 0 1 8 24V11Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+				<path d="M36 15h3a5 5 0 0 1 0 10h-4M7 42h34" stroke="currentColor" stroke-width="4" stroke-linecap="square"/>
+			</svg>
+		</footer>
+	</div>
+</body>
+</html>
