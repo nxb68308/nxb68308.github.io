@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu | Brews &amp; Bonds</title>
+	<style>
+		body {
+			margin: 0;
+			background-color: #f4f4f2;
+			color: white;
+			font-family: Georgia, serif;
+		}
+
+		.container {
+			width: 100%;
+			max-width: none;
+			margin: 0;
+		}
+
+		header, footer {
+			background-color: #87a46b;
+			color: white;
+			padding: 8px 25px;
+		}
+
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		header h1 {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin: 0;
+			font-size: 30px;
+		}
+
+		.cup-icon {
+			width: 40px;
+			height: 40px;
+		}
+
+		nav a {
+			margin-left: 12px;
+			color: white;
+			text-decoration: none;
+		}
+
+		.nav-toggle, .nav-toggle-label {
+			display: none;
+		}
+
+		nav a:hover, footer a:hover {
+			text-decoration: underline;
+		}
+
+		.banner {
+			display: block;
+			width: 100%;
+			height: 260px;
+			object-fit: cover;
+		}
+
+		.menu-section {
+			padding: 10px 35px 20px;
+			background-color: #92aeaa;
+		}
+
+		.menu-row {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			min-height: 165px;
+		}
+
+		.menu-row img {
+			width: 145px;
+			height: 145px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		.menu-details {
+			flex: 1;
+		}
+
+		.menu-details h2, .brunch h2 {
+			width: fit-content;
+			margin: 0 auto 8px;
+			padding: 0 8px 4px;
+			border-bottom: 4px solid white;
+			font-size: 48px;
+			font-weight: normal;
+			line-height: 1;
+			text-align: center;
+		}
+
+		.drink-lists {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+		}
+
+		.beverages .drink-lists ul {
+			line-height: 1.15;
+			text-align: center;
+		}
+
+		.menu-details ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 15px;
+			line-height: 1.4;
+			text-align: center;
+		}
+
+		.menu-row.pastries {
+			min-height: 185px;
+		}
+
+		.menu-row.sandwiches {
+			min-height: 175px;
+		}
+
+		.sandwiches .menu-details h2 {
+			margin-bottom: 8px;
+		}
+
+		.sandwiches .menu-details p {
+			margin: 0;
+			text-align: center;
+			font-size: 15px;
+		}
+
+		.brunch {
+			min-height: 215px;
+			padding: 35px 20px;
+			background-color: #7c9995;
+		}
+
+		.brunch-image {
+			display: block;
+			width: 145px;
+			height: 145px;
+			margin: 0 auto 18px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		.brunch h2 {
+			margin-bottom: 16px;
+		}
+
+		.brunch ul {
+			width: 75%;
+			margin: 0 auto;
+			padding: 0;
+			list-style: none;
+			font-size: 15px;
+			line-height: 1.4;
+			text-align: center;
+		}
+
+		footer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			min-height: 70px;
+		}
+
+		footer a {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			margin-right: 20px;
+			color: white;
+			font-size: 19px;
+		}
+
+		.social-icon {
+			width: 34px;
+			height: 34px;
+		}
+
+		.footer-cup {
+			width: 78px;
+			height: 78px;
+			color: #b7cba0;
+		}
+
+		@media (max-width: 650px) {
+			.container {
+				width: 100%;
+				margin-top: 0;
+			}
+
+			header {
+				flex-wrap: wrap;
+				gap: 10px;
+			}
+
+			nav a {
+				margin: 0 10px 0 0;
+			}
+
+			.nav-toggle {
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				overflow: hidden;
+				clip-path: inset(50%);
+				white-space: nowrap;
+			}
+
+			.nav-toggle-label {
+				display: block;
+				width: 100%;
+				padding: 10px 0;
+				border-top: 1px solid rgba(255, 255, 255, 0.45);
+				cursor: pointer;
+			}
+
+			.nav-toggle-label::after {
+				content: "";
+				float: right;
+				width: 20px;
+				height: 14px;
+				margin-top: 3px;
+				background: linear-gradient(to bottom, white 0 2px, transparent 2px 6px, white 6px 8px, transparent 8px 12px, white 12px 14px);
+			}
+
+			.nav-toggle:focus-visible + .nav-toggle-label {
+				outline: 2px solid white;
+				outline-offset: 3px;
+			}
+
+			.nav-toggle:not(:checked) ~ nav {
+				display: none;
+			}
+
+			header nav {
+				width: 100%;
+			}
+
+			header nav a {
+				display: block;
+				padding: 8px 0;
+			}
+
+			.banner {
+				height: 210px;
+			}
+
+			.menu-section {
+				padding: 15px 20px;
+			}
+
+			.menu-row, .menu-row.pastries, .menu-row.sandwiches {
+				flex-direction: column;
+				gap: 12px;
+				padding: 18px 0;
+			}
+
+			.menu-row img {
+				width: 125px;
+				height: 125px;
+			}
+
+			.menu-details {
+				width: 100%;
+			}
+
+			.menu-details h2, .brunch h2 {
+				font-size: 40px;
+			}
+
+			.drink-lists {
+				gap: 20px;
+			}
+
+			.menu-details ul, .sandwiches .menu-details p, .brunch ul {
+				font-size: 14px;
+			}
+
+			.brunch ul {
+				width: 90%;
+			}
+
+			footer {
+				flex-wrap: wrap;
+				gap: 12px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>
+				<svg class="cup-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+					<path d="M8 11h28v13a12 12 0 0 1-12 12h-4A12 12 0 0 1 8 24V11Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+					<path d="M36 15h3a5 5 0 0 1 0 10h-4M7 42h34" stroke="currentColor" stroke-width="4" stroke-linecap="square"/>
+				</svg>
+				Brews &amp; Bonds
+			</h1>
+			<input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle main navigation">
+			<label class="nav-toggle-label" for="nav-toggle"></label>
+			<nav aria-label="Main navigation">
+				<a href="index.html">Home</a>
+				<a href="about.html">About</a>
+                <a href="menu.html">Menu</a>
+				<a href="events.html">Events</a>
+				<a href="jobs.html">Jobs</a>
+			</nav>
+		</header>
+
+		<main>
+			<img class="banner" src="AdobeStock_2012042941.jpeg" alt="Variety of drinks">
+
+			<div class="menu-section">
+				<div class="menu-row beverages">
+					<img src="unnamed.jpg" alt="A fun beverage">
+					<div class="menu-details">
+						<h2>Beverages</h2>
+						<div class="drink-lists">
+							<ul>
+								<li>Iced Coffee - $4.00</li>
+								<li>Cold Brew - $4.50</li>
+								<li>Frappuccino - $5.00</li>
+								<li>Hot Chocolate - $3.50</li>
+								<li>Chai Tea Latte - $4.50</li>
+								<li>Matcha Latte - $4.50</li>
+								<li>Herbal Tea - $3.00</li>
+								<li>Iced Tea - $3.50</li>
+								<li>Smoothie - $5.00</li>
+							</ul>
+							<ul>
+								<li>Espresso - $2.50</li>
+								<li>Americano - $3.00</li>
+								<li>Latte - $4.00</li>
+								<li>Cappuccino - $4.00</li>
+								<li>Mocha - $4.50</li>
+								<li>Macchiato - $4.50</li>
+								<li>Flat White - $4.50</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="menu-row pastries">
+					<img src="AdobeStock_308816929.jpeg"Fresh pastries from the bakery">
+					<div class="menu-details">
+						<h2>Pastries</h2>
+						<ul>
+							<li>Croissant - $2.50</li>
+							<li>Bagel - $3.00</li>
+							<li>Muffin - $2.50</li>
+							<li>Scone - $3.00</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="menu-row sandwiches">
+					<img src="1000021504.jpg" alt="A fresh egg bagel sandwich">
+					<div class="menu-details">
+						<h2>Sandwiches</h2>
+						<p>Sandwich (e.g., ham and cheese, turkey and avocado) - $6.00</p>
+					</div>
+				</div>
+			</div>
+
+			<section class="brunch">
+				<img class="brunch-image" src="1000021200.jpg" alt="A brunch dish with fresh ingredients">
+				<h2>Brunch</h2>
+				<ul>
+					<li>Salad (e.g., chicken Caesar, Greek) - $7.50</li>
+					<li>Quiche - $5.50</li>
+					<li>Soup of the Day - $4.50</li>
+					<li>Fruit Parfait - $4.50</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer>
+			<div>
+				<a href="https://www.instagram.com/" aria-label="Instagram: @brews and bonds coffee">
+					<svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+						<rect x="3" y="3" width="18" height="18" rx="5"/>
+						<circle cx="12" cy="12" r="4"/>
+						<circle cx="17.5" cy="6.5" r="0.75" fill="currentColor"/>
+					</svg>
+					@brews&amp;bonds_coffee
+				</a>
+				<a href="https://www.facebook.com/" aria-label="Facebook: @brews and bonds coffee">
+					<svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+						<path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/>
+					</svg>
+					@brews&amp;bonds_coffee
+				</a>
+			</div>
+			<svg class="cup-icon footer-cup" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+				<path d="M8 11h28v13a12 12 0 0 1-12 12h-4A12 12 0 0 1 8 24V11Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+				<path d="M36 15h3a5 5 0 0 1 0 10h-4M7 42h34" stroke="currentColor" stroke-width="4" stroke-linecap="square"/>
+			</svg>
+		</footer>
+	</div>
+</body>
+</html>
