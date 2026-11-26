@@ -1,0 +1,613 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #f5f5f0;
+	color: #304542;
+	font-family: Georgia, serif;
+}
+
+.container {
+	width: 100%;
+}
+
+header,
+footer {
+	background: #91ae75;
+	color: #fff;
+	padding: 0 25px;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 80px;
+	gap: 20px;
+}
+
+header h1 {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+	font-size: 32px;
+	white-space: nowrap;
+}
+
+.cup-icon {
+	width: 38px;
+	height: 38px;
+	flex: 0 0 auto;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 18px;
+}
+
+nav a {
+	position: relative;
+	padding: 8px 0;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+nav a[aria-current="page"]::after {
+	position: absolute;
+	right: 0;
+	bottom: 2px;
+	left: 0;
+	height: 2px;
+	background: currentColor;
+	content: "";
+}
+
+nav a:hover,
+footer a:hover {
+	text-decoration: underline;
+}
+
+main {
+	min-height: calc(100vh - 160px);
+}
+
+.page-title {
+	margin: 0;
+	padding: 24px 20px;
+	background: #293333;
+	color: #fff;
+	font-size: 36px;
+	font-weight: normal;
+	text-align: center;
+}
+
+.home-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: center;
+	gap: 28px;
+	min-height: 240px;
+	padding: 20px 35px;
+	background: #293333;
+	color: #fff;
+}
+
+.home-section:nth-child(even) {
+	background: #404a4a;
+}
+
+.home-section.reverse {
+	direction: rtl;
+}
+
+.home-section.reverse > * {
+	direction: ltr;
+}
+
+.home-section div {
+	text-align: center;
+}
+
+.home-section h2 {
+	margin: 0;
+	font-size: 38px;
+	font-weight: normal;
+	line-height: 1.18;
+}
+
+.home-section img {
+	display: block;
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+}
+
+.button {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 10px 18px;
+	background: #8eaa70;
+	color: #fff;
+	font-size: 20px;
+	text-decoration: none;
+}
+
+.button:hover {
+	background: #b7cba0;
+	color: #304542;
+}
+
+.story {
+	padding: 24px max(24px, calc((100% - 900px) / 2));
+	background: #404a4a;
+	color: #fff;
+}
+
+.about-page .container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.about-page header {
+	min-height: 58px;
+	padding: 0 20px;
+}
+
+.about-page header h1 {
+	font-size: 34px;
+}
+
+.about-page nav {
+	gap: 16px;
+}
+
+.about-page nav a {
+	font-size: 16px;
+}
+
+.about-page main {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-height: 0;
+}
+
+.about-page .story {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 48px;
+	padding: 24px 24px 30px;
+	background: #293333;
+}
+
+.about-page .story p {
+	width: min(86%, 900px);
+	align-self: center;
+	margin: 0;
+	font-size: 19px;
+	line-height: 1.25;
+}
+
+.about-page .story p:first-child {
+	width: min(80%, 900px);
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.about-page .story p:last-child {
+	width: min(88%, 900px);
+}
+
+.story p {
+	margin: 0 0 22px;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+.story p:last-child {
+	margin-bottom: 0;
+}
+
+.story-image {
+	display: block;
+	width: 100%;
+	height: clamp(220px, 41.1vw, 360px);
+	object-fit: cover;
+	object-position: center;
+}
+
+.about-page footer {
+	min-height: 88px;
+	padding: 0 35px;
+}
+
+.menu-banner {
+	display: block;
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+
+.menu-section {
+	padding: 18px 35px;
+	background: #293333;
+	color: #fff;
+}
+
+.menu-row {
+	display: grid;
+	grid-template-columns: 140px minmax(0, 1fr);
+	align-items: center;
+	gap: 30px;
+	max-width: 1000px;
+	min-height: 175px;
+	margin: 0 auto;
+}
+
+.menu-row img,
+.brunch-image {
+	display: block;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.menu-details {
+	min-width: 0;
+	text-align: center;
+}
+
+.menu-details h2,
+.brunch h2 {
+	margin: 0 0 12px;
+	font-size: 34px;
+	font-weight: normal;
+}
+
+.drink-lists {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+.menu-details ul,
+.brunch ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+.menu-details p {
+	margin: 0;
+}
+
+.brunch {
+	padding: 25px 20px;
+	background: #404a4a;
+	color: #fff;
+	text-align: center;
+}
+
+.brunch-image {
+	margin: 0 auto 15px;
+}
+
+.events-content {
+	padding: 18px 16px 16px;
+	background: #293333;
+	color: #fff;
+}
+
+.events-hero {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	aspect-ratio: 2 / 3;
+	overflow: hidden;
+	background: #293333;
+}
+
+.events-hero img {
+	display: block;
+	width: 150%;
+	height: 66.6667%;
+	object-fit: cover;
+	object-position: center;
+	transform: rotate(90deg);
+}
+
+.schedule {
+	width: 100%;
+}
+
+.schedule-row {
+	display: grid;
+	grid-template-columns: 4% 23% 1fr;
+	border-bottom: 5px solid #fff;
+}
+
+.schedule-day {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 12px 10px;
+	border-right: 5px solid #fff;
+	font-size: 20px;
+	font-weight: normal;
+	text-align: center;
+}
+
+.schedule-gutter {
+	border-right: 5px solid #fff;
+}
+
+.schedule-events {
+	padding: 12px 10px;
+	line-height: 1.5;
+	font-size: 20px;
+}
+
+.schedule-events p {
+	margin: 0;
+}
+
+.note {
+	margin: 10px auto 0;
+	max-width: 900px;
+	font-size: 14px;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.events-page header {
+	min-height: 50px;
+	padding: 0 24px;
+}
+
+.events-page footer {
+	min-height: 88px;
+	padding: 0 35px;
+}
+
+.events-page footer a {
+	font-size: 16px;
+}
+
+.careers {
+	position: relative;
+	min-height: 500px;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+}
+
+.careers img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: 500px;
+	object-fit: cover;
+}
+
+.careers-text {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	padding: 0 16px;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+}
+
+.careers h2 {
+	margin: 0 0 10px;
+	font-size: 56px;
+	font-weight: normal;
+}
+
+.careers p {
+	margin: 0;
+	font-size: 26px;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 80px;
+	gap: 16px;
+}
+
+footer > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 18px;
+}
+
+footer a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.social-icon {
+	width: 28px;
+	height: 28px;
+}
+
+.footer-cup {
+	width: 52px;
+	height: 52px;
+	color: #e2edda;
+}
+
+@media (max-width: 700px) {
+	header {
+		flex-direction: column;
+		justify-content: center;
+		gap: 4px;
+		padding: 12px 16px;
+	}
+
+	header h1 {
+		font-size: 28px;
+	}
+
+	nav {
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 4px 16px;
+	}
+
+	nav a {
+		font-size: 16px;
+	}
+
+	.about-page header {
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 10px;
+		padding: 0 12px;
+	}
+
+	.about-page header h1 {
+		gap: 5px;
+		font-size: clamp(22px, 5vw, 34px);
+	}
+
+	.about-page .cup-icon {
+		width: 32px;
+		height: 32px;
+	}
+
+	.about-page nav {
+		flex-wrap: nowrap;
+		gap: clamp(6px, 2vw, 16px);
+	}
+
+	.about-page nav a {
+		font-size: clamp(12px, 2.3vw, 16px);
+	}
+
+	.about-page .story {
+		gap: 48px;
+		padding: 24px 24px 30px;
+	}
+
+	.about-page .story p {
+		width: 90%;
+		font-size: 17px;
+	}
+
+	.about-page footer {
+		padding: 0 20px;
+	}
+
+	.home-section,
+	.home-section.reverse {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		padding: 22px 18px;
+	}
+
+	.home-section h2 {
+		font-size: 30px;
+	}
+
+	.home-section img {
+		height: 210px;
+	}
+
+	.menu-banner {
+		height: 140px;
+	}
+
+	.menu-section {
+		padding: 12px 18px;
+	}
+
+	.menu-row {
+		grid-template-columns: 1fr;
+		gap: 10px;
+		padding: 18px 0;
+	}
+
+	.menu-row img,
+	.brunch-image {
+		width: 120px;
+		height: 120px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.menu-details h2,
+	.brunch h2 {
+		font-size: 30px;
+	}
+
+	.drink-lists {
+		gap: 18px;
+	}
+
+	.menu-details ul,
+	.brunch ul {
+		font-size: 14px;
+	}
+
+	.schedule-day,
+	.schedule-events {
+		padding: 9px 7px;
+	}
+
+	.schedule-day {
+		font-size: 18px;
+	}
+
+	.schedule-events {
+		font-size: 16px;
+	}
+
+	.careers,
+	.careers img {
+		min-height: 420px;
+	}
+
+	.careers h2 {
+		font-size: 44px;
+	}
+
+	.careers p {
+		font-size: 21px;
+	}
+
+	footer {
+		padding: 14px 16px;
+	}
+}
+
+@media (max-width: 420px) {
+	.drink-lists {
+		gap: 10px;
+	}
+
+	.menu-details ul {
+		font-size: 13px;
+	}
+}

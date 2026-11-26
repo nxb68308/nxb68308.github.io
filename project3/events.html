@@ -4,237 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Events | Brews &amp; Bonds</title>
-	<style>
-		body {
-			margin: 0;
-			background-color: #f4f4f2;
-			color: white;
-			font-family: Georgia, serif;
-		}
-
-		.container {
-			width: 100%;
-			max-width: none;
-			margin: 0;
-		}
-
-		header, footer {
-			background-color: #87a46b;
-			color: white;
-			padding: 8px 25px;
-		}
-
-		header {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		header h1 {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			margin: 0;
-			font-size: 30px;
-		}
-
-		.cup-icon {
-			width: 40px;
-			height: 40px;
-		}
-
-		nav a {
-			margin-left: 12px;
-			color: white;
-			text-decoration: none;
-		}
-
-		.nav-toggle, .nav-toggle-label {
-			display: none;
-		}
-
-		nav a:hover, footer a:hover {
-			text-decoration: underline;
-		}
-
-		.event-banner {
-			display: flex;
-		}
-
-		.event-banner img {
-			display: block;
-			width: 100%;
-			aspect-ratio: 0.94;
-			object-fit: cover;
-			object-position: center bottom;
-		}
-
-		.schedule {
-			padding: 22px 18px 12px;
-			background-color: #7c9995;
-		}
-
-		table {
-			width: 100%;
-			border-collapse: collapse;
-		}
-
-		.day-column {
-			width: 27%;
-			border-right: 4px solid white;
-			text-align: center;
-		}
-
-		th, td {
-			padding: 10px 12px;
-			border-bottom: 4px solid white;
-		}
-
-		th {
-			font-size: 24px;
-			font-weight: normal;
-		}
-
-		td {
-			font-size: 15px;
-			line-height: 1.4;
-		}
-
-		.event-details {
-			text-align: left;
-		}
-
-		.note {
-			margin: 12px 0 0;
-			text-align: center;
-			font-size: 14px;
-			line-height: 1.4;
-		}
-
-		footer {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			min-height: 70px;
-		}
-
-		footer a {
-			display: inline-flex;
-			align-items: center;
-			gap: 10px;
-			margin-right: 20px;
-			color: white;
-			font-size: 19px;
-		}
-
-		.social-icon {
-			width: 34px;
-			height: 34px;
-		}
-
-		.footer-cup {
-			width: 78px;
-			height: 78px;
-			color: #b7cba0;
-		}
-
-		@media (max-width: 650px) {
-			.container {
-				width: 100%;
-				margin-top: 0;
-			}
-
-			header {
-				flex-wrap: wrap;
-				gap: 10px;
-			}
-
-			nav a {
-				margin: 0 10px 0 0;
-			}
-
-			.nav-toggle {
-				position: absolute;
-				width: 1px;
-				height: 1px;
-				overflow: hidden;
-				clip-path: inset(50%);
-				white-space: nowrap;
-			}
-
-			.nav-toggle-label {
-				display: block;
-				width: 100%;
-				padding: 10px 0;
-				border-top: 1px solid rgba(255, 255, 255, 0.45);
-				cursor: pointer;
-			}
-
-			.nav-toggle-label::after {
-				content: "";
-				float: right;
-				width: 20px;
-				height: 14px;
-				margin-top: 3px;
-				background: linear-gradient(to bottom, white 0 2px, transparent 2px 6px, white 6px 8px, transparent 8px 12px, white 12px 14px);
-			}
-
-			.nav-toggle:focus-visible + .nav-toggle-label {
-				outline: 2px solid white;
-				outline-offset: 3px;
-			}
-
-			.nav-toggle:not(:checked) ~ nav {
-				display: none;
-			}
-
-			header nav {
-				width: 100%;
-			}
-
-			header nav a {
-				display: block;
-				padding: 8px 0;
-			}
-
-			.schedule {
-				padding: 14px 8px 10px;
-			}
-
-			.day-column {
-				width: 25%;
-			}
-
-			th, td {
-				padding: 8px 6px;
-			}
-
-			th {
-				font-size: 18px;
-			}
-
-			td {
-				font-size: 13px;
-			}
-
-			.note {
-				font-size: 12px;
-			}
-
-			footer {
-				flex-wrap: wrap;
-				gap: 12px;
-			}
-		}
-
-		@media (max-width: 420px) {
-			.event-details {
-				font-size: 12px;
-			}
-		}
-	</style>
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="events-page">
 	<div class="container">
 		<header>
 			<h1>
@@ -244,74 +17,94 @@
 				</svg>
 				Brews &amp; Bonds
 			</h1>
-			<input class="nav-toggle" type="checkbox" id="nav-toggle" aria-label="Toggle main navigation">
-			<label class="nav-toggle-label" for="nav-toggle"></label>
 			<nav aria-label="Main navigation">
 				<a href="index.html">Home</a>
 				<a href="about.html">About</a>
-                <a href="menu.html">Menu</a>
-				<a href="events.html">Events</a>
+				<a href="menu.html">Menu</a>
+				<a href="events.html" aria-current="page">Events</a>
 				<a href="jobs.html">Jobs</a>
 			</nav>
 		</header>
-
 		<main>
-			<div class="event-banner">
-				<img src="gallery.png"Art exhibit">
-			</div>
-
-			<section class="schedule">
-				<table>
-					<tbody>
-						<tr>
-							<th class="day-column" scope="row">Monday</th>
-							<td class="event-details">→ Morning Yoga Class (8:00 AM - 9:00 AM)<br>→ Live Acoustic Music (7:00 PM - 9:00 PM)</td>
-						</tr>
-						<tr>
-							<th class="day-column" scope="row">Tuesday</th>
-							<td class="event-details">→ Coffee Tasting Workshop (6:00 PM - 7:30 PM)<br>→ Open Mic Night (8:00 PM - 10:00 PM)</td>
-						</tr>
-						<tr>
-							<th class="day-column" scope="row">Wednesday</th>
-							<td class="event-details">→ Art Exhibition (All day)<br>→ Trivia Night (7:00 PM - 9:00 PM)</td>
-						</tr>
-						<tr>
-							<th class="day-column" scope="row">Thursday</th>
-							<td class="event-details">→ Cooking Class (5:00 PM - 7:00 PM)<br>→ Board Game Night (6:00 PM - 9:00 PM)</td>
-						</tr>
-						<tr>
-							<th class="day-column" scope="row">Friday</th>
-							<td class="event-details">→ Live Jazz Band (7:30 PM - 9:30 PM)</td>
-						</tr>
-						<tr>
-							<th class="day-column" scope="row">Saturday</th>
-							<td class="event-details">→ Family Day (10:00 AM - 12:00 PM)<br>→ Poetry Slam (7:00 PM - 9:00 PM)</td>
-						</tr>
-						<tr>
-							<th class="day-column" scope="row">Sunday</th>
-							<td class="event-details">→ Book Club Meeting (3:00 PM - 4:30 PM)<br>→ Sunday Brunch (10:00 AM - 2:00 PM)</td>
-						</tr>
-					</tbody>
-				</table>
-			<p class="note">Please note that specific event dates and times may vary, and it's always a good idea to check with the coffee shop for the most up-to-date information and any additional events they may offer.</p>
+			<section class="events-hero" aria-label="Events">
+				<img src="gallery.webp" alt="Artwork displayed at a cafe event">
+			</section>
+			<section class="events-content" aria-label="Weekly event schedule">
+				<div class="schedule">
+					<div class="schedule-row">
+						<div class="schedule-gutter"></div>
+						<h2 class="schedule-day">Monday</h2>
+						<div class="schedule-events">
+							<p>&rarr; Morning Yoga Class: 8:00 AM - 9:00 AM</p>
+							<p>&rarr; Live Acoustic Music: 7:00 PM - 9:00 PM</p>
+						</div>
+					</div>
+					<div class="schedule-row">
+						<div class="schedule-gutter"></div>
+						<h2 class="schedule-day">Tuesday</h2>
+						<div class="schedule-events">
+							<p>&rarr; Coffee Tasting Workshop: 6:00 PM - 7:30 PM</p>
+							<p>&rarr; Open Mic Night: 8:00 PM - 10:00 PM</p>
+						</div>
+					</div>
+					<div class="schedule-row">
+						<div class="schedule-gutter"></div>
+						<h2 class="schedule-day">Wednesday</h2>
+						<div class="schedule-events">
+							<p>&rarr; Art Exhibition: All day</p>
+							<p>&rarr; Trivia Night: 7:00 PM - 9:00 PM</p>
+						</div>
+					</div>
+					<div class="schedule-row">
+						<div class="schedule-gutter"></div>
+						<h2 class="schedule-day">Thursday</h2>
+						<div class="schedule-events">
+							<p>&rarr; Cooking Class: 5:00 PM - 7:00 PM</p>
+							<p>&rarr; Board Game Night: 6:00 PM - 9:00 PM</p>
+						</div>
+					</div>
+					<div class="schedule-row">
+						<div class="schedule-gutter"></div>
+						<h2 class="schedule-day">Friday</h2>
+						<div class="schedule-events">
+							<p>&rarr; Live Jazz Band: 7:30 PM - 9:30 PM</p>
+						</div>
+					</div>
+					<div class="schedule-row">
+						<div class="schedule-gutter"></div>
+						<h2 class="schedule-day">Saturday</h2>
+						<div class="schedule-events">
+							<p>&rarr; Family Day: 10:00 AM - 12:00 PM</p>
+							<p>&rarr; Poetry Slam: 7:00 PM - 9:00 PM</p>
+						</div>
+					</div>
+					<div class="schedule-row">
+						<div class="schedule-gutter"></div>
+						<h2 class="schedule-day">Sunday</h2>
+						<div class="schedule-events">
+							<p>&rarr; Book Club Meeting: 3:00 PM - 4:30 PM</p>
+							<p>&rarr; Sunday Brunch: 10:00 AM - 2:00 PM</p>
+						</div>
+					</div>
+				</div>
+				<p class="note">Please note that specific event dates and times may vary, and it's always a good idea to check with the coffee shop for the most up-to-date information and any additional events they may offer.</p>
 			</section>
 		</main>
-
 		<footer>
 			<div>
-				<a href="https://www.instagram.com/" aria-label="Instagram: @brews and bonds coffee">
-					<svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-						<rect x="3" y="3" width="18" height="18" rx="5"/>
-						<circle cx="12" cy="12" r="4"/>
-						<circle cx="17.5" cy="6.5" r="0.75" fill="currentColor"/>
+				<a href="https://www.instagram.com/" aria-label="Instagram: @brews&amp;bonds_">
+					<svg class="social-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+						<rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2.5"/>
+						<circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2.5"/>
+						<circle cx="17.5" cy="6.5" r="1.25" fill="currentColor"/>
 					</svg>
-					@brews&amp;bonds_coffee
+					<span>@brews&amp;bonds_</span>
 				</a>
-				<a href="https://www.facebook.com/" aria-label="Facebook: @brews and bonds coffee">
-					<svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-						<path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z"/>
+				<a href="https://www.facebook.com/" aria-label="Facebook: @brews&amp;bonds_">
+					<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+						<path fill="currentColor" d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.6V10H7v3h2.6v8h3.9z"/>
 					</svg>
-					@brews&amp;bonds_coffee
+					<span>@brews&amp;bonds_</span>
 				</a>
 			</div>
 			<svg class="cup-icon footer-cup" viewBox="0 0 48 48" fill="none" aria-hidden="true">
